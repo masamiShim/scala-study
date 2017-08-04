@@ -1,0 +1,33 @@
+@(tasks: List[Task], taskForm: Form[models.Task])(implicit messages:Messages)
+
+@import helper._
+
+@main("Todo list") {
+	<h1 class="ui header">@tasks.size task(s)</h1>
+	<div class="ui list" style="min-width:900px;">
+		@tasks.map {task =>
+			<div class="item" style="margin:5px 0px;border-bottom:1px solid #000000; width:50%">
+				<div style="position:relative;top:8px;float:left;width: 50%; font-size:20px;padding-left:10px;padding-right:10px;">
+					@task.label
+				</div>
+				<div class="ui buttons" style="float:left;">
+					@form(routes.TodoController.delete(task.id)){
+						<input class="ui button" type="submit" value="Delete">
+					}
+					@form(routes.TodoController.update(task.id)){
+						<input class="ui button primary" type="submit" value="Update">
+					}
+				</div>
+			</div>
+		}	
+	</div>
+	<h2 class="ui header">Add a new task</h2>
+	<div style="width:80%;">
+	@form(routes.TodoController.regist){
+		@inputText(taskForm("label"),'_label -> "lbl", '_class -> "ui input")
+			<div style="clear:both;">
+				<input style="position:relative; left:10px;margin-top:20px; right:0;" class="ui button primary" type="submit" value="Create">
+			</div>
+	}
+	</div>
+}

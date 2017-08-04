@@ -1,0 +1,21 @@
+@* template Template File *@
+@(title: String)(content: Html)
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>@title</title>
+		<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
+		<script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+		
+	</head>
+	
+	<body>
+		<section>@include.sidebar()</section>
+		<div class="pusher">
+			<h1>this template</h1>
+			<section id="content">@content</section>
+		</div>
+	</body>
+</html>

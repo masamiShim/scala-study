@@ -1,0 +1,8 @@
+@* iterateTag Template File *@
+@import models.Order
+@(list: List[Order])
+<ul>
+	@for(item <- list){
+			<li><p>title: @item.title price: @item.price</p></li>
+	}
+</ul>

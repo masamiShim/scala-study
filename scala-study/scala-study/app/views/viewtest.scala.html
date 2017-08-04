@@ -1,0 +1,10 @@
+@* viewtest Template File *@
+@import tags.iterateTag
+@(item: Customer, orders:List[Order])
+<h1>Welcome @item.name!</h1>
+
+@if(orders.isEmpty){
+	<h1>You Have No Order</h1>
+}else{
+	@iterateTag(orders)
+}

@@ -1,0 +1,35 @@
+body{
+	font-family:"ƒqƒ‰ƒMƒmŠpƒS Pro W3",ƒƒCƒŠƒI,Osaka,Arial,Verdana,"‚l‚r ‚oƒSƒVƒbƒN",sans-serif;
+	font-size: 10px;
+}
+
+#content{
+	padding:10px 20px;
+}
+
+h1{
+	font-size: 23px;
+	padding:10px 20px;
+}
+
+dt {
+float: left ;
+clear: left ;
+margin-right: 0.5em ;
+width: 120px ;
+position: relative;
+top: 3px;
+}
+
+dd {
+float: left ;
+margin-left: 1em ;
+}
+
+dd.info{
+	font-size:12px;
+}
+dd.info::before{
+	content: "*";
+	color: red;
+}

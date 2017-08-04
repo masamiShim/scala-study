@@ -1,0 +1,52 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET    /               controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET    /count          controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET    /message        controllers.AsyncController.message
+
+# An example test
+GET    /test/:name     controllers.TestController.index(name: String)
+
+# An example test
+GET    /abc            controllers.TestController.index2
+
+# An example test
+GET    /d              controllers.TestController.delCookie
+
+# An example test
+GET    /e              controllers.TestController.viewCookie
+
+GET    /flash          controllers.TestController.flashTest
+POST   /flash2         controllers.TestController.haveFlash
+GET    /flash2         controllers.TestController.haveFlash
+GET    /parser         controllers.TestController.contentPraser
+GET    /save           controllers.TestController.save	
+GET    /log            controllers.TestController.logAction
+GET    /filter         controllers.TestController.filterAction
+
+GET    /viewt          controllers.ViewController.index
+GET    /temp           controllers.ViewController.template
+GET    /say            controllers.HomeController.home
+GET    /user/entry     controllers.UserController.entryInit
+POST   /user/entry     controllers.UserController.entrySubmit
+
+GET    /tasks          controllers.TodoController.index
+POST   /tasks/show     controllers.TodoController.show
+GET    /tasks/reg      controllers.TodoController.regist
+POST   /tasks/upd      controllers.TodoController.update(taskId :Option[Int])
+POST   /tasks/del      controllers.TodoController.delete(taskId :Option[Int])
+
+#GET    /chat           controllers.ChatController.index
+#GET    /chat/:roomId   controllers.ChatController.chat(roomId: String)
+GET    /get            controllers.chat.ChatController.get
+GET    /ws/:roomId      controllers.chat.ChatController.ws(roomId: String)
+#POST    /ws         controllers.ChatController.socket
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET    /assets/*file   controllers.Assets.versioned(path="/public", file: Asset)

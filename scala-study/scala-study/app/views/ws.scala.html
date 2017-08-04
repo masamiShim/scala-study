@@ -1,0 +1,22 @@
+@* viewtest Template File *@
+@(mes: String)
+@main("websocket") {
+<script type="text/javascript">
+<!--
+	$(document).ready(function(){
+		var ws = new WebSocket("ws://localhost:9000/socket");
+		ws.open = function() { ws.send("hello"); }
+		console.log(ws)
+		ws.close
+	});
+//-->
+</script>
+
+<h1>Welcome WebSockTest!</h1>
+	<form action="/ws" method="POST">
+		<input type="text" class="ui input" id="out" name="out"/>
+			<div style="clear:both;">
+				<input style="position:relative; left:10px;margin-top:20px; right:0;" class="ui button primary" type="submit" value="Send">
+			</div>
+	</form>
+}	
